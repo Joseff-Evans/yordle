@@ -94,6 +94,8 @@ function App() {
 
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {   
+
+      e.preventDefault();
       
       const key = e.key.toUpperCase();
 
