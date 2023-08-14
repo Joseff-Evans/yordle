@@ -160,7 +160,7 @@ function App() {
         <div key={letter}><button
         onClick={() => addGuessLetter(letter)} 
         className={letter + (validChars.includes(letter) ? " correct" : closeChars.includes(letter) ? " close" : invalidChars.includes(letter) ? "  miss" : "")}
-        onKeyPress={e => e.keyCode === 13 ? addGuessLetter(letter) : ""}>
+        onKeyPress={e => console.log(e.keyCode)}>
           {letter}
         </button></div>
       )}
