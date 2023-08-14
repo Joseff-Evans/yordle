@@ -159,21 +159,22 @@ function App() {
       {letters.slice(0,10).map(letter =>
         <div key={letter}><button
         onClick={() => addGuessLetter(letter)} 
-        className={letter + (validChars.includes(letter) ? " correct" : closeChars.includes(letter) ? " close" : invalidChars.includes(letter) ? "  miss" : "")}>
+        className={letter + (validChars.includes(letter) ? " correct" : closeChars.includes(letter) ? " close" : invalidChars.includes(letter) ? "  miss" : "")}
+        onKeyPress={e => e.keyCode === 13 ? addGuessLetter(letter) : ""}>
           {letter}
         </button></div>
       )}
       </div>
       <div className="row">
       {letters.slice(10,19).map(letter =>
-        <div key={letter}><button onClick={() => addGuessLetter(letter)} className={letter + (validChars.includes(letter) ? " correct" : closeChars.includes(letter) ? " close" : invalidChars.includes(letter) ? "  miss" : "")}>{letter}</button></div>
+        <div key={letter}><button onKeyPress={e => e.keyCode === 13 ? addGuessLetter(letter) : ""} onClick={() => addGuessLetter(letter)} className={letter + (validChars.includes(letter) ? " correct" : closeChars.includes(letter) ? " close" : invalidChars.includes(letter) ? "  miss" : "")}>{letter}</button></div>
       )}
       </div>
       
       <div className="row">
           {letters.slice(19,28).map(letter =>
             <div key={letter}>
-              <button onClick={() => addGuessLetter(letter)} className={letter + (validChars.includes(letter) ? " correct" : closeChars.includes(letter) ? " close" : invalidChars.includes(letter) ? "  miss" : "")}>
+              <button onKeyPress={e => e.keyCode === 13 ? addGuessLetter(letter) : ""} onClick={() => addGuessLetter(letter)} className={letter + (validChars.includes(letter) ? " correct" : closeChars.includes(letter) ? " close" : invalidChars.includes(letter) ? "  miss" : "")}>
               {letter === "BACKSPACE" ? "\u{02190}" : letter === "ENTER" ? "\u{021A9}" : letter}
               </button></div>
           )}
